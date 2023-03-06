@@ -8,12 +8,12 @@ import {
 const ContactList = ({ contactsData, deleteContact }) => {
   return (
     <StyledList>
-      {contactsData.map(({ id, name, phoneNumber }) => (
+      {contactsData.map(({ id, name, phone_number }) => (
         <li key={id}>
           <ContactInfo>
             <div>
               <span>{name} : </span>
-              <span>{phoneNumber}</span>
+              <span>{phone_number}</span>
             </div>
 
             <StyledCloseButton

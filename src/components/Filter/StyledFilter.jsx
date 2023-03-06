@@ -8,7 +8,7 @@ const StyledFilterWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
-  margin-bottom: 30px;
+
   box-shadow: 0.3em 0.3em 0.3em 0.3em
     rgba(0.4, 0.4, 0.4, 0.4);
   border-radius: 10px;

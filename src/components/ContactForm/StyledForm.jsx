@@ -46,6 +46,4 @@ const StyledForm = styled(CustomForm)`
   }
 `;
 
-const StyledLable = styled.label``;
-
-export { StyledLable, StyledForm };
+export { StyledForm };
