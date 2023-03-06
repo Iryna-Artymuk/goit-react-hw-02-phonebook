@@ -14,12 +14,8 @@ const StyledList = styled.ul`
   background: rgba(241, 101, 231, 0.8);
 `;
 
-const Item = styled.li`
-  position: relative;
-`;
-
 const ContactInfo = styled.div`
-  width: 300px;
+  width: 100%;
   display: flex;
   gap: 5px;
   align-items: center;
@@ -59,4 +55,4 @@ const StyledCloseButton = styled.button`
   }
 `;
 
-export { StyledCloseButton, StyledList, ContactInfo, Item };
+export { StyledCloseButton, StyledList, ContactInfo };

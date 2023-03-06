@@ -1,9 +1,11 @@
 import uniqid from 'uniqid';
+
 import PropTypes from 'prop-types';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import { StyledForm, StyledLable } from './StyledForm';
+
 export default function ContactsForm({ addContact }) {
   const ContactValidationSchema = Yup.object().shape({
     name: Yup.string().required('Name is  required'),
@@ -18,12 +20,13 @@ export default function ContactsForm({ addContact }) {
         name: '',
         phoneNumber: '',
       }}
-      onSubmit={value => {
+      onSubmit={(value, actions) => {
         const newContact = {
           id: uniqid(),
           ...value,
         };
         addContact(newContact);
+        actions.resetForm();
       }}
       validationSchema={ContactValidationSchema}
     >
@@ -40,7 +43,7 @@ export default function ContactsForm({ addContact }) {
         </StyledLable>
 
         <ErrorMessage name="phoneNumber" component="div" />
-        <button type="submit"> Submit</button>
+        <button type="submit"> Add contact </button>
       </StyledForm>
     </Formik>
   );

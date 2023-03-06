@@ -18,7 +18,7 @@ const StyledForm = styled(CustomForm)`
   background: rgba(241, 101, 231, 0.8);
 
   button {
-    width: 200px;
+    width: 150px;
     height: 50px;
     background-color: blueviolet;
     border-radius: 10px;
@@ -28,7 +28,7 @@ const StyledForm = styled(CustomForm)`
 
   input {
     display: flex;
-    width: 300px;
+    width: 100%;
     gap: 5px;
     justify-content: center;
     align-items: center;

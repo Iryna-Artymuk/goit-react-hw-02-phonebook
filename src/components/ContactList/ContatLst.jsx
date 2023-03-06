@@ -3,25 +3,26 @@ import {
   StyledCloseButton,
   StyledList,
   ContactInfo,
-  Item,
 } from './StyledContactList';
 
 const ContactList = ({ contactsData, deleteContact }) => {
   return (
     <StyledList>
       {contactsData.map(({ id, name, phoneNumber }) => (
-        <Item key={id}>
+        <li key={id}>
           <ContactInfo>
-            <span>{name} : </span>
-            <span>{phoneNumber}</span>
-          </ContactInfo>
+            <div>
+              <span>{name} : </span>
+              <span>{phoneNumber}</span>
+            </div>
 
-          <StyledCloseButton
-            onClick={() => deleteContact(id)}
-          >
-            <AiOutlineClose />
-          </StyledCloseButton>
-        </Item>
+            <StyledCloseButton
+              onClick={() => deleteContact(id)}
+            >
+              <AiOutlineClose />
+            </StyledCloseButton>
+          </ContactInfo>
+        </li>
       ))}
     </StyledList>
   );
