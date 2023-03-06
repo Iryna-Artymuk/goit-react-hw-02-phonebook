@@ -3,15 +3,14 @@ import uniqid from 'uniqid';
 import PropTypes from 'prop-types';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-
+import 'yup-phone';
 import { StyledForm, StyledLable } from './StyledForm';
 
 export default function ContactsForm({ addContact }) {
   const ContactValidationSchema = Yup.object().shape({
     name: Yup.string().required('Name is  required'),
-    phoneNumber: Yup.string().required(
-      ' Phone number is  required'
-    ),
+    phoneNumber: Yup.string()
+    .required(' Phone number is  required'),
   });
 
   return (

@@ -35,10 +35,6 @@ const ContactInfo = styled.div`
   background: wheat;
 `;
 const StyledCloseButton = styled.button`
-  position: absolute;
-
-  top: 5px;
-  right: 5px;
   width: 20px;
   height: 20px;
 
