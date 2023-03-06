@@ -1,17 +1,29 @@
-const ContactList = ({ contactsData }) => {
-  console.log(contactsData);
+import { AiOutlineClose } from 'react-icons/ai';
+import {
+  StyledCloseButton,
+  StyledList,
+  ContactInfo,
+  Item,
+} from './StyledContactList';
+
+const ContactList = ({ contactsData, deleteContact }) => {
   return (
-    <ul
-      style={{
-        width: '30vw',
-        minHeight: '30vw',
-        background: ' rgba(241, 101, 231, 0.8)',
-      }}
-    >
-      <li>
-        <p></p>
-      </li>
-    </ul>
+    <StyledList>
+      {contactsData.map(({ id, name, phoneNumber }) => (
+        <Item key={id}>
+          <ContactInfo>
+            <span>{name} : </span>
+            <span>{phoneNumber}</span>
+          </ContactInfo>
+
+          <StyledCloseButton
+            onClick={() => deleteContact(id)}
+          >
+            <AiOutlineClose />
+          </StyledCloseButton>
+        </Item>
+      ))}
+    </StyledList>
   );
 };
 

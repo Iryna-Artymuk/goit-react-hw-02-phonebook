@@ -41,7 +41,8 @@ export const emotionReset = css`
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     background-color: #fef8f8;
-    padding-top: 30px;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
   }
   input,
   button,
