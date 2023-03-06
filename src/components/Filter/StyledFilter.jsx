@@ -16,7 +16,7 @@ const StyledFilterWrapper = styled.div`
 
   input {
     display: flex;
-    width: 100%;
+    width: 300px;
     gap: 5px;
     justify-content: center;
     align-items: center;

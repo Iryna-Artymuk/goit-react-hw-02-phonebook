@@ -28,7 +28,7 @@ const StyledForm = styled(CustomForm)`
 
   input {
     display: flex;
-    width: 100%;
+    width: 300px;
     gap: 5px;
     justify-content: center;
     align-items: center;
@@ -40,9 +40,8 @@ const StyledForm = styled(CustomForm)`
     border-radius: 10px;
     top: 0;
     transition: all 300ms ease-in-out;
-    box-shadow: 0.3em 0.3em rgba(0.4, 0.4, 0.4, 0.4);
+    /* box-shadow: 0.3em 0.3em rgba(0.4, 0.4, 0.4, 0.4); */
     background: wheat;
-    margin-top: 8px;
   }
 `;
 
