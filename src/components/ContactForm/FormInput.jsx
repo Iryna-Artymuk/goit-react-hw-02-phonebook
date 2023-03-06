@@ -24,9 +24,6 @@ const PhoneInputField = props => {
       value={value}
       onChange={onValueChange}
       defaultCountry="UA"
-      style={{
-        width: 400,
-      }}
     />
   );
 };

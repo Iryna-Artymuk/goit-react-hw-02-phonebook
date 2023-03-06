@@ -41,9 +41,6 @@ export default function ContactsForm({ addContact }) {
           <Field
             type="text"
             name="name"
-            style={{
-              width: 400,
-            }}
             placeholder="Enter name"
           />
         </lable>
