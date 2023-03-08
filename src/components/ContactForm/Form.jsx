@@ -36,7 +36,7 @@ export default function ContactsForm({ addContact }) {
       validationSchema={ContactValidationSchema}
     >
       <StyledForm>
-        <lable>
+        <lable >
           Name:
           <Field
             type="text"

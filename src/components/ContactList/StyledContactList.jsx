@@ -17,6 +17,7 @@ const StyledList = styled.ul`
 const ContactInfo = styled.div`
   width: 300px;
   display: flex;
+  justify-content: space-between;
   gap: 5px;
   align-items: center;
 

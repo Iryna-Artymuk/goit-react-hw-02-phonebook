@@ -24,6 +24,7 @@ const PhoneInputField = props => {
         width: '300px',
         boxShadow: '0.3em 0.3em rgba(0.4, 0.4, 0.4, 0.4)',
         borderRadius: 10,
+        paddingLeft: 20,
       }}
     >
       <PhoneInput
