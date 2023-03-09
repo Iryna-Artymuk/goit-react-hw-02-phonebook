@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-import { StyledForm } from './StyledForm';
+import { StyledForm, Label } from './StyledForm';
 
 export default function ContactsForm({ addContact }) {
   const phoneRegExp =
@@ -36,18 +36,18 @@ export default function ContactsForm({ addContact }) {
       validationSchema={ContactValidationSchema}
     >
       <StyledForm>
-        <lable >
-          Name:
+        <Label>
+          Name
           <Field
             type="text"
             name="name"
             placeholder="Enter name"
+            lable="Name:"
           />
-        </lable>
-
+        </Label>
         <ErrorMessage name="name" component="div" />
-        <lable>
-          PhoneNumber:
+        <Label htmlFor="phone_number">
+          Phone number
           <Field
             type="tel"
             name="phone_number"
@@ -56,7 +56,7 @@ export default function ContactsForm({ addContact }) {
               width: 400,
             }}
           />
-        </lable>
+        </Label>
 
         <ErrorMessage name="phoneNumber" component="div" />
         <button type="submit"> Add contact </button>

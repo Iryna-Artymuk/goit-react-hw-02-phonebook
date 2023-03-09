@@ -34,11 +34,21 @@ export class App extends Component {
   };
 
   addContact = newContact => {
-    this.setState(prevState => {
-      return {
-        contacts: [newContact, ...prevState.contacts],
-      };
-    });
+    const existContact = this.state.contacts.find(
+      contact => contact.name === newContact.name
+    );
+
+    if (!existContact) {
+      this.setState(prevState => {
+        return {
+          contacts: [newContact, ...prevState.contacts],
+        };
+      });
+    } else {
+      return alert(
+        `contactact ${existContact.name} already in your  list`
+      );
+    }
   };
 
   deleteContact = id => {
@@ -65,15 +75,18 @@ export class App extends Component {
           .includes(normalizeFilterValue)
     );
 
+    console.log(FilteredContacts);
     return (
       <StyledSection title="Phonebook">
         <ContactsForm addContact={this.addContact} />
         <Global styles={emotionReset} />
+        {FilteredContacts.length > 0 && (
+          <ContactList
+            contactsData={FilteredContacts}
+            deleteContact={this.deleteContact}
+          ></ContactList>
+        )}
 
-        <ContactList
-          contactsData={FilteredContacts}
-          deleteContact={this.deleteContact}
-        ></ContactList>
         <Filter
           value={this.state.filterValue}
           handelFilterChange={this.handelFilterChange}

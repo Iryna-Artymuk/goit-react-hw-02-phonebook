@@ -18,7 +18,12 @@ const PhoneInputField = props => {
   };
 
   return (
-    <div
+    <PhoneInput
+      placeholder="Enter phone number"
+      name={name}
+      value={value}
+      onChange={onValueChange}
+      defaultCountry="UA"
       style={{
         background: 'wheat',
         width: '300px',
@@ -26,15 +31,7 @@ const PhoneInputField = props => {
         borderRadius: 10,
         paddingLeft: 20,
       }}
-    >
-      <PhoneInput
-        placeholder="Enter phone number"
-        name={name}
-        value={value}
-        onChange={onValueChange}
-        defaultCountry="UA"
-      />
-    </div>
+    />
   );
 };
 

@@ -11,7 +11,6 @@ const StyledForm = styled(CustomForm)`
   align-items: center;
   justify-content: center;
 
-  margin-top: 30px;
   box-shadow: 0.3em 0.3em 0.3em 0.3em
     rgba(0.4, 0.4, 0.4, 0.4);
   border-radius: 10px;
@@ -45,4 +44,10 @@ const StyledForm = styled(CustomForm)`
   }
 `;
 
-export { StyledForm };
+const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+`;
+export { StyledForm, Label };
