@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { StyledFilterWrapper } from './StyledFilter';
+
 export default function Filter({
   filterValue,
   handelFilterChange,

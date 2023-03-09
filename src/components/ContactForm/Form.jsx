@@ -8,14 +8,14 @@ import { StyledForm, Label } from './StyledForm';
 
 export default function ContactsForm({ addContact }) {
   const phoneRegExp =
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+    /^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/;
+
   const ContactValidationSchema = Yup.object().shape({
     name: Yup.string().required('Name is  required'),
 
-    phoneNumber: Yup.string().matches(
-      phoneRegExp,
-      'Phone number is not valid'
-    ),
+    phone_number: Yup.string()
+      .required('Phone is  required')
+      .matches(phoneRegExp, 'Phone number is not valid'),
   });
 
   return (
@@ -42,7 +42,6 @@ export default function ContactsForm({ addContact }) {
             type="text"
             name="name"
             placeholder="Enter name"
-            lable="Name:"
           />
         </Label>
         <ErrorMessage name="name" component="div" />
@@ -57,8 +56,7 @@ export default function ContactsForm({ addContact }) {
             }}
           />
         </Label>
-
-        <ErrorMessage name="phoneNumber" component="div" />
+        <ErrorMessage name="phone_number" component="div" />
         <button type="submit"> Add contact </button>
       </StyledForm>
     </Formik>
