@@ -17,7 +17,7 @@ const StyledSection = styled.section`
   border-radius: 10px;
 
   margin: auto;
-  margin-bottom: 30px;
+  padding: 20px;
 `;
 
 // .title {

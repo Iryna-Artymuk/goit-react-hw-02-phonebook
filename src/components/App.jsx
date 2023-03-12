@@ -33,6 +33,27 @@ export class App extends Component {
     filterValue: '',
   };
 
+  componentDidMount() {
+    const contacts = localStorage.getItem('Contacts List');
+    const parsedContacts = JSON.parse(contacts);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    const prevContacts = prevState.contacts;
+    const currentContacts = this.state.contacts;
+
+    if (prevContacts !== currentContacts) {
+      localStorage.setItem(
+        'Contacts List',
+        JSON.stringify(currentContacts)
+      );
+    }
+  }
+
   addContact = newContact => {
     const existContact = this.state.contacts.find(
       contact => contact.name === newContact.name
@@ -75,22 +96,22 @@ export class App extends Component {
           .includes(normalizeFilterValue)
     );
 
-    console.log(FilteredContacts);
     return (
       <StyledSection title="Phonebook">
         <ContactsForm addContact={this.addContact} />
         <Global styles={emotionReset} />
         {FilteredContacts.length > 0 && (
-          <ContactList
-            contactsData={FilteredContacts}
-            deleteContact={this.deleteContact}
-          ></ContactList>
+          <>
+            <ContactList
+              contactsData={FilteredContacts}
+              deleteContact={this.deleteContact}
+            ></ContactList>
+            <Filter
+              value={this.state.filterValue}
+              handelFilterChange={this.handelFilterChange}
+            />
+          </>
         )}
-
-        <Filter
-          value={this.state.filterValue}
-          handelFilterChange={this.handelFilterChange}
-        />
       </StyledSection>
     );
   }
