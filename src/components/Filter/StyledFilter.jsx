@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const StyledFilterWrapper = styled.div`
   width: 70%;
-
+  display: flex;
   gap: 20px;
   align-items: center;
   justify-content: center;
